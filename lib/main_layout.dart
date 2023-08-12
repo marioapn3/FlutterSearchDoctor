@@ -13,7 +13,7 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   //variabel deklarasi page current
-  int currentPage = 0 ;
+  int currentPage = 0;
 
   final PageController _page = PageController();
 
@@ -22,28 +22,29 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       body: PageView(
         controller: _page,
-        onPageChanged: ((value){
+        onPageChanged: ((value) {
           setState(() {
             currentPage = value;
           });
         }),
-        children: const <Widget>[
-          HomePage(),
-          AppointmentPage()
-        ],
+        children: const <Widget>[HomePage(), AppointmentPage()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.houseChimneyMedical),
-          label: 'Home'),
-          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.solidCalendarCheck),
+          BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.houseChimneyMedical),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.solidCalendarCheck),
               label: 'Appointments'),
         ],
-        onTap: (page){
+        onTap: (page) {
           setState(() {
             currentPage = page;
-            _page.animateToPage(page, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+            _page.animateToPage(page,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut);
           });
         },
       ),

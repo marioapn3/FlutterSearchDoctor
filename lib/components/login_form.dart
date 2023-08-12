@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_search_doctor/components/button.dart';
+import 'package:flutter_search_doctor/providers/dio_provider.dart';
 import 'package:flutter_search_doctor/utils/config.dart';
 
 class LoginForm extends StatefulWidget {
@@ -46,28 +47,36 @@ class _LoginFormState extends State<LoginForm> {
               prefixIcon: Icon(Icons.lock_outlined),
               prefixIconColor: Config.primaryColor,
               suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      obsecurePass = !obsecurePass;
-                    });
-                  },
-                  icon: obsecurePass
-                      ? const Icon(
-                          Icons.visibility_off_outlined,
-                          color: Colors.black38,
-                        )
-                      : const Icon(
-                          Icons.visibility_outlined,
-                          color: Config.primaryColor,
-                        ),
+                onPressed: () {
+                  setState(() {
+                    obsecurePass = !obsecurePass;
+                  });
+                },
+                icon: obsecurePass
+                    ? const Icon(
+                        Icons.visibility_off_outlined,
+                        color: Colors.black38,
+                      )
+                    : const Icon(
+                        Icons.visibility_outlined,
+                        color: Config.primaryColor,
+                      ),
               ),
             ),
           ),
           Config.spaceSmall,
           //Login Button
-          Button(width: double.infinity, title: 'Sign In', disable: false, onPressed: (){
-            Navigator.of(context).pushNamed('main');
-          })
+          Button(
+              width: double.infinity,
+              title: 'Sign In',
+              disable: false,
+              onPressed: () async {
+                //login here
+                // final token = await DioProvider()
+                //     .getToken(_emailController.text, _passController.text);
+                // print(token);
+                Navigator.of(context).pushNamed('main');
+              })
         ],
       ),
     );
