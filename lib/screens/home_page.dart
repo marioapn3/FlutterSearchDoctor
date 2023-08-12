@@ -39,8 +39,9 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const <Widget>[
                     Text(
-                      'Amanda',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      'Hi 👋 Amanda',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       child: CircleAvatar(
@@ -114,7 +115,9 @@ class _HomePageState extends State<HomePage> {
                 Config.spaceSmall,
                 Column(
                   children: List.generate(10, (index) {
-                    return const DoctorCard();
+                    return const DoctorCard(
+                      route: 'doc_detail',
+                    );
                   }),
                 )
               ],

@@ -64,10 +64,9 @@ class _AuthPageState extends State<AuthPage> {
                 child: Text(
                   AppText.enText['social-login']!,
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight : FontWeight.normal,
-                    color : Colors.grey.shade500
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey.shade500),
                 ),
               ),
               Config.spaceSmall,

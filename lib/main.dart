@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_search_doctor/main_layout.dart';
 import 'package:flutter_search_doctor/screens/auth_page.dart';
+import 'package:flutter_search_doctor/screens/booking_page.dart';
+import 'package:flutter_search_doctor/screens/doctor_details.dart';
+import 'package:flutter_search_doctor/screens/success_booked.dart';
 import 'package:flutter_search_doctor/utils/config.dart';
 
 void main() {
@@ -47,27 +50,10 @@ class MyApp extends StatelessWidget {
         '/': (context) => const AuthPage(),
         //after login
         'main': (context) => const MainLayout(),
+        'doc_detail': (context) => const DoctorDetail(),
+        'booking_page': (context) => const BookingPage(),
+        'success_booking': (context) => const AppointmentBooked()
       },
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('test')),
-      body: Row(
-        children: [
-          Container(
-            color: Colors.red,
-            width: 200,
-            height: 200,
-          )
-        ],
-      ),
     );
   }
 }
